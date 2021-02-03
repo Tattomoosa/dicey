@@ -6,27 +6,31 @@ pub fn roll(count: usize) -> Roll {
 }
 
 pub fn d4() -> usize {
-    return roll(1).d4()
+    return roll(1).d(4)
 }
 
 pub fn d6() -> usize {
-    return roll(1).d6()
+    return roll(1).d(6)
 }
 
 pub fn d8() -> usize {
-    return roll(1).d8()
+    return roll(1).d(8)
 }
 
 pub fn d10() -> usize {
-    return roll(1).d10()
+    return roll(1).d(10)
 }
 
 pub fn d12() -> usize {
-    return roll(1).d12()
+    return roll(1).d(12)
 }
 
 pub fn d20() -> usize {
-    return roll(1).d20()
+    return roll(1).d(20)
+}
+
+pub fn d100() -> usize {
+    return roll(1).d(100)
 }
 
 
@@ -106,6 +110,8 @@ impl Roll {
     pub fn d12(&self) -> usize { return self.d(12) }
 
     pub fn d20(&self) -> usize { return self.d(20) }
+
+    pub fn d100(&self) -> usize { return self.d(100) }
 }
 
 #[cfg(test)]
