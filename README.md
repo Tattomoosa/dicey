@@ -35,6 +35,16 @@ roll(1).d10();
 roll(1).d12();
 roll(1).d20();
 
+// even more convenient functions for single rolls
+use dicey::{ d4, d6, d8, d10, d12, d20} // or 'use dicey::*'
+
+d4() // roll(1).d4();
+d6() // roll(1).d6();
+d8() // roll(1).d8();
+d10() // roll(1).d10();
+d12() // roll(1).d12();
+d20() // roll(1).d20();
+
 ```
 
 ## Quirks

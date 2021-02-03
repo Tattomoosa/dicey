@@ -5,6 +5,31 @@ pub fn roll(count: usize) -> Roll {
     Roll { count }
 }
 
+pub fn d4() -> usize {
+    return roll(1).d4()
+}
+
+pub fn d6() -> usize {
+    return roll(1).d6()
+}
+
+pub fn d8() -> usize {
+    return roll(1).d8()
+}
+
+pub fn d10() -> usize {
+    return roll(1).d10()
+}
+
+pub fn d12() -> usize {
+    return roll(1).d12()
+}
+
+pub fn d20() -> usize {
+    return roll(1).d20()
+}
+
+
 /// Represents some count of die being rolled (faces on die determined later)
 pub struct Roll {
     /// How many die are rolled in this roll
@@ -45,6 +70,7 @@ impl Roll {
         }
     }
 
+    /// Represents a roll with advantage (roll twice, take best)
     pub fn advantage(&self, sides: usize) -> usize {
         if sides == 0 || self.count == 0 {
             0
@@ -55,6 +81,7 @@ impl Roll {
         }
     }
 
+    /// Represents a roll with disadvantage (roll twice, take worst)
     pub fn disadvantage(&self, sides: usize) -> usize {
         if sides == 0 || self.count == 0 {
             0
@@ -67,6 +94,7 @@ impl Roll {
 
 
     // convenience
+
     pub fn d4(&self) -> usize { return self.d(4) }
 
     pub fn d6(&self) -> usize { return self.d(6) }
