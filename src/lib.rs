@@ -64,6 +64,20 @@ impl Roll {
             min(roll1, roll2)
         }
     }
+
+
+    // convenience
+    pub fn d4(&self) -> usize { return self.d(4) }
+
+    pub fn d6(&self) -> usize { return self.d(6) }
+
+    pub fn d8(&self) -> usize { return self.d(8) }
+
+    pub fn d10(&self) -> usize { return self.d(10) }
+
+    pub fn d12(&self) -> usize { return self.d(12) }
+
+    pub fn d20(&self) -> usize { return self.d(20) }
 }
 
 #[cfg(test)]
