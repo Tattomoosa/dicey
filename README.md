@@ -13,8 +13,20 @@ experience to get suitable random odds by using this in the source code.
 use dicey::roll;
 
 roll(6).d(6) // 6d6
-roll(1).advantage(20) // 1d20 with advantage
-roll(3).advantage(20) // 3d20 with advantage, equivalent to max(roll(3).d(20), roll(3).d(20))
+roll(1).d(20) // 1d20
+roll(1).advantage(20) // 1d20 with advantage, = max(roll(1).d(20), roll(1).d(20))
+roll(3).advantage(20) // 3d20 with advantage, = max(roll(3).d(20), roll(3).d(20))
+roll(1).disadvantage(20) // 1d20 with disadvantage = max(roll(1).d(20), roll(1).d(20))
+// useful for comparisons
+roll(1).crit_fail(20) // value corresponding to crit fail "all ones", = 1
+roll(2).crit_fail(20) // value corresponding to crit fail "all ones", = 2
+roll(1).crit_success(20) // value corresponding to crit success = 20
+roll(2).crit_success(20) // value corresponding to crit success = 40
+// eg:
+if roll(1).d(20) == roll(1).crit_success(20) {
+  massive_damage();
+}
+
 ```
 
 ## Quirks
